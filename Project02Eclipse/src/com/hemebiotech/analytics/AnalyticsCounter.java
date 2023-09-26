@@ -3,9 +3,10 @@ package com.hemebiotech.analytics;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.util.HashMap;
 import java.util.Map;
+//import java.io.FileWriter;
+
 
 public class AnalyticsCounter {
 	private static int headacheCount = 0;
@@ -41,12 +42,24 @@ public class AnalyticsCounter {
 
 			line = reader.readLine();	// get another symptom
 		}
-		
+
+		Map<String, Integer> symptomsMap = new HashMap<>();
 		// next generate output
-		FileWriter writer = new FileWriter ("result.out");
-		writer.write("headache: " + headacheCount + "\n");
-		writer.write("rash: " + rashCount + "\n");
-		writer.write("dialated pupils: " + pupilCount + "\n");
-		writer.close();
+		ISymptomWriter symptomwriter1 = new WriteSymptomDataToFile("headache: ", headacheCount);
+		symptomsMap.put("headache: ", headacheCount);
+		symptomwriter1.WriteSymptoms(symptomsMap);
+
+		ISymptomWriter symptomwriter2 = new WriteSymptomDataToFile("rash: ", rashCount);
+		symptomsMap.put("rash: ", rashCount);
+		symptomwriter2.WriteSymptoms(symptomsMap);
+
+		ISymptomWriter symptomwriter3 = new WriteSymptomDataToFile("dialated pupils: ", pupilCount);
+		symptomsMap.put("dialated pupils: ", pupilCount);
+		symptomwriter3.WriteSymptoms(symptomsMap);
+		//FileWriter writer = new FileWriter ("result.out");
+		//writer.write("headache: " + headacheCount + "\n");
+		//writer.write("rash: " + rashCount + "\n");
+		//writer.write("dialated pupils: " + pupilCount + "\n");
+		//writer.close();
 	}
 }
