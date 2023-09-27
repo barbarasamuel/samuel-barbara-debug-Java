@@ -23,13 +23,13 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
     @Override
     public void WriteSymptoms(Map<String, Integer>symptomsMap) throws IOException{
 
-
+        //to write the symptomsMap map in the result.out file
         FileWriter writer = new FileWriter("result.out");
 
-        writer.write("headache: " + this.counter + "\n"); //headacheCount + "\n");
-        writer.write("rash: " + this.counter + "\n"); //rashCount + "\n");
-        writer.write("dialated pupils: " + this.counter + "\n"); //pupilCount + "\n");
-        //writer.write(this.subject + " " + this.counter + "\n");
+        for (String orderedList : symptomsMap.keySet()) {
+            writer.write(orderedList + " " + symptomsMap.get(orderedList) + "\n");
+        }
+
         writer.close();
 
     }
