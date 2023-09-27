@@ -4,6 +4,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * Implementation to the ISymptomWriter interface
+ *
+ */
 
 public class WriteSymptomDataToFile implements ISymptomWriter {
     private String subject;
@@ -11,7 +15,7 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
 
     /**
      *
-     * @param subject, counter to know the symptom and its counter
+     * To write the symptoms and their number
      */
     public WriteSymptomDataToFile (String subject, Integer counter) {
         this.subject = subject;
