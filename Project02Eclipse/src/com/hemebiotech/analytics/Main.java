@@ -10,9 +10,9 @@ public class Main {
         ISymptomWriter writerBase = new WriteSymptomDataToFile("",0);
         AnalyticsCounter analyticsCounterResult = new AnalyticsCounter(symptomsList,writerBase);
 
-        List<String> listResult = symptomsList.GetSymptoms();
+        List<String> listResult = symptomsList.getSymptoms();
         Map<String,Integer> countSymptomsResult = analyticsCounterResult.countSymptoms(listResult);
         countSymptomsResult = analyticsCounterResult.sortSymptoms(countSymptomsResult);
-        writerBase.WriteSymptoms(countSymptomsResult);
+        writerBase.writeSymptoms(countSymptomsResult);
     }
 }

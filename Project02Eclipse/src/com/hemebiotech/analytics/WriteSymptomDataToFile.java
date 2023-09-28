@@ -13,19 +13,19 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
     private String subject;
     private Integer counter;
 
-    /**
-     *
-     * To write the symptoms and their number
-     */
+
     public WriteSymptomDataToFile (String subject, Integer counter) {
         this.subject = subject;
         this.counter = counter;
     }
 
-
+    /**
+     *
+     * Implement the ISymptomWriter interface to write the symptoms and their number in the result.out file
+     */
 
     @Override
-    public void WriteSymptoms(Map<String, Integer>symptomsMap) throws IOException{
+    public void writeSymptoms(Map<String, Integer>symptomsMap) throws IOException{
 
         //to write the symptomsMap map in the result.out file
         FileWriter writer = new FileWriter("result.out");

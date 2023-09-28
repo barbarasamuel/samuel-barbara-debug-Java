@@ -20,7 +20,7 @@ public class AnalyticsCounter {
 
 	/**
 	 *
-	 * The countSymptoms method to count the symptoms with a map
+	 * The countSymptoms method to count the number of symptoms by symptom with a map
 	 * */
 	public Map<String,Integer> countSymptoms(List<String> symptoms){
 		//to get and to count each symptom
@@ -36,7 +36,7 @@ public class AnalyticsCounter {
 
 	/**
 	 *
-	 * The sortSymptoms method to sort the symptoms by symptom with a TreeMap
+	 * The sortSymptoms method to sort the symptoms by symptom in alphabetical order with a TreeMap
 	 * */
 	public Map<String,Integer> sortSymptoms(Map<String,Integer> symptoms){
 		//to sort the symptoms map
