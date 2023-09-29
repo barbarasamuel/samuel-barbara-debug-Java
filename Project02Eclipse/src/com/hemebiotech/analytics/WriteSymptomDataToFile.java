@@ -31,7 +31,7 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
         FileWriter writer = new FileWriter("result.out");
 
         for (String orderedList : symptomsMap.keySet()) {
-            writer.write(orderedList + " " + symptomsMap.get(orderedList) + "\n");
+            writer.write(orderedList + ": " + symptomsMap.get(orderedList) + "\n");
         }
 
         writer.close();
